@@ -1,0 +1,61 @@
+<html>
+  <style>
+    div {
+      border: 1px solid black;
+      width: 300px;
+      height: 200px;
+      overflow: scroll;
+    }
+  </style>
+  <body>
+    <div id="div-body">
+      <p style="background-color: red; height: 700px">This is line 1</p>
+      <p style="background-color: blue; height: 700px">This is line 2</p>
+      <p style="background-color: green; height: 700px">This is line 3</p>
+      <p style="background-color: yellow; height: 700px">This is line 4</p>
+    </div>
+
+    <p>No of times event fired</p>
+    <p id="show-api-call-count"></p>
+
+    <p>No of times throttling executed the method</p>
+    <p id="debounc-count"></p>
+  </body>
+  <script>
+    var timer;
+    var divBody = document.getElementById("div-body");
+
+    function makeApiCall() {
+      var throttleCountDiv = document.getElementById("debounc-count");
+
+      var throttleCount = throttleCountDiv.innerHTML || 0;
+
+      throttleCountDiv.innerHTML = parseInt(throttleCount) + 1;
+    }
+
+    var throttleFunction = function (cb, delay) {
+      if (timer) {
+        return;
+      }
+
+      timer = setTimeout(function () {
+        cb();
+
+        timer = undefined;
+      }, delay);
+    };
+
+    divBody.addEventListener("scroll", function () {
+      var allApiCountDiv = document.getElementById("show-api-call-count");
+
+      var allApiCount = allApiCountDiv.innerHTML || 0;
+
+      allApiCountDiv.innerHTML = parseInt(allApiCount) + 1;
+
+      throttleFunction(makeApiCall, 2000);
+    });
+
+    // Throttling basically delay the execution of a function
+
+  </script>
+</html>
