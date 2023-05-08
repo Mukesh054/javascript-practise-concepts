@@ -72,6 +72,29 @@ Array.prototype.filterAlbums = function (callback, context) {
   return arr;
 };
 
+// Group By Polyfill
+const groupBy = (values, keyFinder) => {
+  // using reduce to aggregate values
+  return values.reduce((a, b) => {
+    // depending upon the type of keyFinder
+    // if it is function, pass the value to it
+    // if it is a property, access the property
+    const key = typeof keyFinder === 'function' ? keyFinder(b) : b[keyFinder];
+    
+    // aggregate values based on the keys
+    if(!a[key]){
+      a[key] = [b];
+    }else{
+      a[key] = [...a[key], b];
+    }
+    
+    return a;
+  }, {});
+};
+console.log(groupBy([6.1, 4.2, 6.3], Math.floor));
+console.log(groupBy(["one", "two", "three"], "length")); 
+
+
 // Promise ALL
 Promise.myAll = function (values) {
   return new Promise((resolve, reject) => {
@@ -90,3 +113,39 @@ Promise.myAll = function (values) {
     });
   });
 };
+
+// Promise.race
+const race = function (promisesArray) {
+  return new Promise((resolve, reject) => {
+    promisesArray.forEach((promise) => {
+      Promise.resolve(promise)
+        .then(resolve, reject) // resolve, when any of the input promise resolves
+        .catch(reject); // reject, when any of the input promise rejects
+    });
+  });
+};
+
+// Promise any
+const any = function (promisesArray) {
+  const promiseErrors = new Array(promisesArray.length);
+  let counter = 0;
+
+  return new Promise((resolve, reject) => {
+    promisesArray.forEach((promise, index) => {
+      Promise.resolve(promise)
+        .then(resolve)
+        .catch((err) => {
+          promiseErrors[index] = err;
+          counter++;
+
+          if (counter === promisesArray.length) {
+            reject(promiseErrors);
+          }
+        });
+    });
+  });
+};
+// testing promise any (make duplicates of test1 to test more cases...)
+const test1 = new Promise(function (resolve, reject) {
+  setTimeout(reject, 500, "one");
+});

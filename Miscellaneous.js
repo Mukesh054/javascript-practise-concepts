@@ -126,8 +126,28 @@ const obj = {
     },
   },
 };
-
 console.log(flatten(obj));
+
+// Flat a object with nested path using dot(.) operator
+function flattenObjectWithRelativePath(obj, prefix = "") {
+  let output = {};
+
+  for (const key in obj) {
+    const val = obj[key];
+
+    const newKey = prefix === "" ? key : prefix + "." + key;
+
+    if (val !== null && typeof val === "object") {
+      let recursiveOutput = solution(val, newKey);
+      output = { ...output, ...recursiveOutput };
+    } else {
+      output[newKey] = val;
+    }
+  }
+
+  return output;
+}
+console.log(solution(obj));
 
 // Find second largest number from an array
 function findSecondLargestElem(arr) {
@@ -420,3 +440,105 @@ function areThereDuplicates() {
   return false;
 }
 
+// Get object value from string path
+const getObjectValue = (obj, path) => {
+  path = path.replaceAll("[", ".");
+  path = path.replaceAll("]", "");
+
+  const keys = path.split(".").filter(Boolean);
+
+  let current = obj;
+
+  for (const key of keys) {
+    current = current[key];
+  }
+
+  if (current === undefined) {
+    return undefined;
+  }
+
+  return current;
+};
+
+const obj = {
+  developer: "Software Engg",
+  address: {
+    city: "Karnal",
+  },
+};
+const aa = getObjectValue(obj, "address[city]");
+console.log(aa);
+// Get object value from string path ends here....
+
+// SAMPLER FUNCTION
+const sampler = (fn, count = 1) => {
+  let track = 0;
+
+  return function (...args) {
+    track++;
+
+    if (track === count) {
+      fn(...args);
+      track = 0;
+    }
+  };
+};
+
+function message(msg) {
+  console.log(msg);
+}
+
+const sample = sampler(message, 4);
+
+sample("1");
+sample("2");
+sample("3");
+sample("4");
+// SAMPLER FUNCTION ENDS HERE
+
+// PIPING FUNCTION
+const obj = {
+  a: {
+    b: (a, b, c) => a + b + c,
+    c: (a, b, c) => a + b - c,
+  },
+  d: (a, b, c) => a - b - c,
+};
+
+function ffn(obj) {
+  return function (...args) {
+    for (let key in obj) {
+      const val = obj[key];
+
+      if (typeof val === "function") {
+        obj[key] = val(...args);
+      } else if (val && typeof val === "object" && !Array.isArray(val)) {
+        ffn(val)(...args);
+      }
+    }
+  };
+}
+
+ffn(obj)(1, 1, 1);
+console.log(obj);
+// PIPING FUNCTION ENDS HERE......
+
+// Toggle Function Arguments
+function toggleFunctionArguments(...args) {
+  let index = 0;
+  
+  return function () {
+   
+    if (args.length) {
+      if(index >= args.length) {
+        index = 0;
+      }
+
+      return args[index++]
+    }
+  };
+}
+
+const aa = toggleFunctionArguments("Hello", "Ram", "Wink", 1);
+console.log(aa());  // call this line multiple time to see the output...
+// Toggle Function Arguments ends here

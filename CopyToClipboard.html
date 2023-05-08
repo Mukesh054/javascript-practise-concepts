@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copy to clipboard......</title>
+  </head>
+  <body>
+    <p>Master DSA with Javascript</p>
+
+    <script>
+      document.querySelector("p").addEventListener("click", async (event) => {
+        if (!navigator.clipboard) {
+          // Clipboard API not available
+          return;
+        }
+
+        //Get the paragraph text
+        const text = event.target.innerText;
+        try {
+          //Write it to the clipboard
+          await navigator.clipboard.writeText(text);
+
+          //Change text to notify user
+          event.target.textContent = "Copied to clipboard";
+        } catch (err) {
+          console.error("Failed to copy!", err);
+        }
+      });
+    </script>
+  </body>
+</html>
