@@ -31,3 +31,55 @@
 // JS Questions.....
 // https://learnersbucket.com/examples/topics/interview/
 
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+
+  push(val) {
+    let newNode = new Node(val);
+
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    this.length++;
+    return this;
+  }
+
+  isPalindrome() {
+    let front = this.head;
+
+    function isPalindromeRecursive(node) {
+      if (!node) return true;
+
+      const reverse = isPalindromeRecursive(node.next);
+
+      const isEqual = front.val === node.val;
+      front = front.next;
+      return reverse && isEqual;
+    }
+
+    return isPalindromeRecursive(this.head);
+  }
+}
+
+let linkedList = new LinkedList();
+linkedList.push(1);
+linkedList.push(2);
+linkedList.push(1);
+linkedList.push(1);
+
+console.log(linkedList.isPalindrome());
