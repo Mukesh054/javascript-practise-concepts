@@ -76,10 +76,28 @@ class LinkedList {
   }
 }
 
-let linkedList = new LinkedList();
-linkedList.push(1);
-linkedList.push(2);
-linkedList.push(1);
-linkedList.push(1);
+// let linkedList = new LinkedList();
+// linkedList.push(1);
+// linkedList.push(2);
+// linkedList.push(1);
+// linkedList.push(1);
 
-console.log(linkedList.isPalindrome());
+// console.log(linkedList.isPalindrome());
+
+function countSum(arr, num) {
+  let map = {};
+
+  let stack = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (map[arr[i]]) {
+      stack.push([map[arr[i]], arr[i]]);
+    } else {
+      map[num - arr[i]] = arr[i];
+    }
+  }
+  return stack;
+}
+
+const aa = [2, 4, 5, 5, 12, 7, 13, 45];
+console.log(countSum(aa, 12));

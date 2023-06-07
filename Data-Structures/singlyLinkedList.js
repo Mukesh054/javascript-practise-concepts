@@ -213,7 +213,7 @@ var middleNode = function (head) {
   return slow;
 };
 
-// Palindrome linked list
+// Checking whether a linked list is palindrome or not!!!
 isPalindrome() {
   let front = this.head;
 

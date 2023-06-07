@@ -1,26 +1,26 @@
 // Reverse a string using recursion
 function reverseMe(s) {
-    if (s === "") {
-      return "";
-    } else {
-      return reverseMe(s.substr(1)) + s.charAt(0);
-    }
+  if (s === "") {
+    return "";
+  } else {
+    return reverseMe(s.substr(1)) + s.charAt(0);
   }
-  const aa = reverseMe("Aman");
-  console.log(aa);
-  
-  // Reverse a string without function
-  const str = "Ram";
-  let newArr = [...str];
-  let newStr = "";
-  for (let i = newArr.length; i > -1; i--) {
-    if (newArr[i]) {
-      newStr += newArr[i];
-    }
-  }
-  console.log(newStr);
+}
+const aa = reverseMe("Aman");
+console.log(aa);
 
-  // Reverse Vowels in a string
+// Reverse a string without function
+const str = "Ram";
+let newArr = [...str];
+let newStr = "";
+for (let i = newArr.length; i > -1; i--) {
+  if (newArr[i]) {
+    newStr += newArr[i];
+  }
+}
+console.log(newStr);
+
+// Reverse Vowels in a string
 const str = "Hello";
 const reverseVowels = (str = "") => {
   const vowels = new Set(["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]);
@@ -54,18 +54,18 @@ console.log(reverseVowels(str));
 
 // Check if a string is palindrome or not
 function checkPalindrome(string) {
-    const len = string.length;
-  
-    for (let i = 0; i < len / 2; i++) {
-      if (string[i] !== string[len - 1 - i]) {
-        return "It is not a palindrome";
-      }
-    }
-    return "It is a palindrome";
-  }
-  console.log(checkPalindrome("rarr"));
+  const len = string.length;
 
-  // Check if string are isomorphic
+  for (let i = 0; i < len / 2; i++) {
+    if (string[i] !== string[len - 1 - i]) {
+      return "It is not a palindrome";
+    }
+  }
+  return "It is a palindrome";
+}
+console.log(checkPalindrome("rarr"));
+
+// Check if string are isomorphic
 const str1 = "abcdea";
 const str2 = "eabdce";
 const isIsomorphic = (str1, str2) => {
@@ -82,55 +82,52 @@ console.log(isIsomorphic(str1, str2));
 
 // IS TWO STRINGS ARE ANAGRAMS
 function isAnagram(first, second) {
-    if (first.length !== second.length) {
+  if (first.length !== second.length) {
+    return false;
+  }
+
+  let obj1 = {};
+  let obj2 = {};
+
+  for (let i = 0; i < first.length; i++) {
+    obj1[first[i]] = (obj1[first[i]] || 0) + 1;
+    obj2[second[i]] = (obj2[second[i]] || 0) + 1;
+  }
+
+  for (const key in obj1) {
+    if (obj1[key] !== obj2[key]) {
       return false;
     }
-  
-    let lookup = {};
-  
-    for (let i = 0; i < first.length; i++) {
-      let letter = first[i];
-      lookup[letter] ? (lookup[letter] += 1) : (lookup[letter] = 1);
-    }
-  
-    for (let i = 0; i < second.length; i++) {
-      let letter = second[i];
-      if (!lookup[letter]) {
-        return false;
-      } else {
-        lookup[letter] -= 1;
-      }
-    }
-  
-    return true;
   }
-  
-  console.log(isAnagram("rat", "tra"));
 
+  return true;
+}
+
+console.log(isAnagram("rat", "tra"));
 
 // Check valid brackets pattern
 const isValidBrackets = (s) => {
-    if (s.length % 2 !== 0) return false;
-  
-    const stack = [];
-    const map = new Map([
-      ["(", ")"],
-      ["[", "]"],
-      ["{", "}"],
-    ]);
-  
-    for (let i = 0; i < s.length; i += 1) {
-      if (map.has(s[i])) {
-        stack.push(map.get(s[i]));
-      } else if (s[i] !== stack.pop()) {
-        return false;
-      }
-    }
-    return stack.length === 0;
-  };
-  console.log(isValidBrackets("([{])"));
+  if (s.length % 2 !== 0) return false;
 
-  // Longest palindrome
+  const stack = [];
+  const map = new Map([
+    ["(", ")"],
+    ["[", "]"],
+    ["{", "}"],
+  ]);
+
+  for (let i = 0; i < s.length; i += 1) {
+    if (map.has(s[i])) {
+      stack.push(map.get(s[i]));
+    } else if (s[i] !== stack.pop()) {
+      return false;
+    }
+  }
+  return stack.length === 0;
+};
+console.log(isValidBrackets("([{])"));
+
+// Longest palindrome
 const aa = "sdsdsq,sdsdsdq,sdsdsdsdsq,sdsdsdsds,maaaaaaaaaaaaaaaam";
 const bb = aa.split(",");
 

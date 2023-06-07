@@ -144,6 +144,22 @@ function countSum(arr, num) {
 const aa = [2, 4, 5, 5, 12, 7, 13, 45];
 console.log(countSum(aa, 9));
 
+// Return only 1 pair solution
+function twoSum(nums, targetNumber) {
+  var obj = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    var currentValue = nums[i];
+    if (obj[targetNumber - currentValue] > 0) {
+      return [obj[targetNumber - currentValue], i];
+    } else {
+      obj[currentValue] = i;
+    }
+  }
+}
+
+//++++++++++++++++++++ ends here +++++++++++++++++==
+
 // Group By from an array
 function groupBy(arr, field) {
   return arr.reduce((acc, curr) => {
@@ -195,7 +211,6 @@ function isSame(arr1, arr2) {
   return true;
 }
 console.log(isSame([1, 2, 3], [9, 4, 1]));
-
 
 // SUM OF TWO ELEMENTS IN AN ARRAY = 0 AND RETURNS THE FIRST PAIR (should be shorted array)
 function zeroSum(arr) {
@@ -375,19 +390,157 @@ console.log(obj);
 // Toggle Function Arguments
 function toggleFunctionArguments(...args) {
   let index = 0;
-  
+
   return function () {
-   
     if (args.length) {
-      if(index >= args.length) {
+      if (index >= args.length) {
         index = 0;
       }
 
-      return args[index++]
+      return args[index++];
     }
   };
 }
 
 const aa = toggleFunctionArguments("Hello", "Ram", "Wink", 1);
-console.log(aa());  // call this line multiple time to see the output...
+console.log(aa()); // call this line multiple time to see the output...
 // Toggle Function Arguments ends here
+
+// Rotate array by K
+function rotatedArray(arr, k) {
+  const size = arr.length;
+
+  if (size > k) {
+    k = k % size;
+  }
+
+  const rotated = arr.splice(size - k, size);
+
+  arr.unshift(...rotated);
+
+  return arr;
+}
+console.log(rotatedArray([1, 2, 3, 4], 2));
+
+function rotatedOptimized(arr, k) {
+  const size = arr.length;
+
+  if (size > k) {
+    k = k % size;
+  }
+
+  reverse(arr, 0, arr.length - 1);
+  reverse(arr, 0, k - 1);
+  reverse(arr, k, arr.length - 1);
+
+  return arr;
+}
+
+function reverse(nums, left, right) {
+  while (left < right) {
+    const temp = nums[left];
+    nums[left] = nums[right];
+    nums[right] = temp;
+
+    left++;
+    right--;
+  }
+}
+
+console.log(rotatedOptimized([1, 2, 3, 4, 5, 6, 7], 3));
+// Rotate array by K ends here
+
+// Remove duplicate entries from an array and return the duplicate count
+function removeDuplicatedFromUnsortedArray(nums) {
+  for (let i = 0; i < nums.length - 1; i++) {
+    if (nums[i] === nums[i + 1]) {
+      nums.splice(i + 1, 1);
+      i--;
+    }
+  }
+  return nums.length;
+}
+console.log(removeDuplicatedFromUnsortedArray([0, 0, 1, 1, 2, 2, 3, 4]));
+
+function removeDuplicatedFromUnsortedArrayOptimized(arr) {
+  if (!arr.length) {
+    return 0;
+  }
+
+  let i = 0;
+
+  for (let j = 0; j < arr.length; j++) {
+    if (arr[i] !== arr[j]) {
+      i++;
+      arr[i] = arr[j];
+    }
+  }
+
+  return i + 1;
+}
+console.log(
+  removeDuplicatedFromUnsortedArrayOptimized([0, 0, 1, 1, 2, 2, 3, 4])
+);
+// Remove duplicate entries from an array and return the duplicate count
+
+// Question: Given an integer array nums, find the subarray with the largest sum & return its value
+function maxSubArraySum(arr) {
+  let maxSum = arr[0];
+
+  for (let i = 0; i < arr.length; i++) {
+    let currentSum = 0;
+    for (let j = i; j < arr.length; j++) {
+      currentSum = currentSum + arr[j];
+
+      if (currentSum > maxSum) {
+        maxSum = currentSum;
+      }
+    }
+  }
+
+  return maxSum;
+}
+
+console.log(maxSubArraySum([-1, 3, -2, 5, 3, 2, -4]));
+
+function maxSubArraySumOptimized(arr) {
+  let sum = 0;
+  let maxSum = arr[0];
+
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
+
+    if (sum > maxSum) {
+      maxSum = sum;
+    }
+
+    if (sum < 0) {
+      sum = 0;
+    }
+  }
+  return maxSum;
+}
+
+console.log(maxSubArraySumOptimized([-1, -3, 2, 5, 3, 2, -4]));
+
+//++++++++++++++++++ ends here
+
+//+++++++++++ 
+// Greedy Algorithm => Best Time to Buy and Sell Stocks
+const maxProfit = function (prices) {
+  let minStockPurchasePrice = prices[0] || 0;
+  let profit = 0;
+
+  for (let i = 1; i < prices.length; i++) {
+    if (prices[i] < minStockPurchasePrice) {
+      minStockPurchasePrice = prices[i];
+    }
+
+    profit = Math.max(profit, prices[i] - minStockPurchasePrice);
+  }
+
+  return profit;
+};
+console.log(maxProfit([7, 6, 4, 3, 1]));
+//++++++++++++++++ ends here
+

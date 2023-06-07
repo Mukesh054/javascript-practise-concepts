@@ -149,3 +149,44 @@ const any = function (promisesArray) {
 const test1 = new Promise(function (resolve, reject) {
   setTimeout(reject, 500, "one");
 });
+
+// JSON_STRIGIFY polyfill
+function stringify(data) {
+  if (data === undefined) {
+    return undefined;
+  }
+
+  if ([null, Infinity].includes(data) || data.toString() === "NaN") {
+    return "null";
+  }
+
+  if (data.constructor === String) return '"' + data.replace(/"/g, '\\"') + '"';
+
+  if (data.constructor === Number) return String(data);
+  if (data.constructor === Boolean) return data ? "true" : "false";
+  if (data.constructor === Array)
+    return (
+      "[" +
+      data
+        .reduce((acc, v) => {
+          if (v === undefined || v === NaN || v === Infinity)
+            return [...acc, "null"];
+          else return [...acc, stringify(v)];
+        }, [])
+        .join(",") +
+      "]"
+    );
+  if (data.constructor === Object)
+    return (
+      "{" +
+      Object.keys(data)
+        .reduce((acc, k) => {
+          if (data[k] === undefined) return acc;
+          else return [...acc, stringify(k) + ":" + stringify(data[k])];
+        }, [])
+        .join(",") +
+      "}"
+    );
+
+  return "{}";
+}
