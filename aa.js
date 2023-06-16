@@ -31,73 +31,11 @@
 // JS Questions.....
 // https://learnersbucket.com/examples/topics/interview/
 
-class Node {
-  constructor(val) {
-    this.val = val;
-    this.next = null;
-  }
+function lengthOfLastWord(s) {
+    // let aa = str.split(" ");
+    // console.log(aa[aa.length-1].length);
+
+    let trimmedString = s.trim();
+    return trimmedString.length - trimmedString.lastIndexOf(' ') - 1;
 }
-
-class LinkedList {
-  constructor() {
-    this.head = null;
-    this.tail = null;
-    this.length = 0;
-  }
-
-  push(val) {
-    let newNode = new Node(val);
-
-    if (!this.head) {
-      this.head = newNode;
-      this.tail = this.head;
-    } else {
-      this.tail.next = newNode;
-      this.tail = newNode;
-    }
-    this.length++;
-    return this;
-  }
-
-  isPalindrome() {
-    let front = this.head;
-
-    function isPalindromeRecursive(node) {
-      if (!node) return true;
-
-      const reverse = isPalindromeRecursive(node.next);
-
-      const isEqual = front.val === node.val;
-      front = front.next;
-      return reverse && isEqual;
-    }
-
-    return isPalindromeRecursive(this.head);
-  }
-}
-
-// let linkedList = new LinkedList();
-// linkedList.push(1);
-// linkedList.push(2);
-// linkedList.push(1);
-// linkedList.push(1);
-
-// console.log(linkedList.isPalindrome());
-
-function countSum(arr, num) {
-  let map = {};
-
-  let stack = [];
-
-  for (let i = 0; i < arr.length; i++) {
-    if (map[arr[i]]) {
-      stack.push([map[arr[i]], arr[i]]);
-    } else {
-      map[num - arr[i]] = arr[i];
-    }
-  }
-  return stack;
-}
-
-const aa = [2, 4, 5, 5, 12, 7, 13, 45];
-console.log(countSum(aa, 12));
+  console.log(lengthOfLastWord("Hello World"));

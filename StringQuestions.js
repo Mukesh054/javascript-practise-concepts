@@ -147,3 +147,119 @@ for (let i = 0; i < bb.length; i++) {
   }
 }
 console.log(newArr);
+
+// ++++ Word Pattern
+function wordPattern(pattern, s) {
+  const pattenMap = new Map();
+  const rev_pattern_map = new Map();
+
+  const wordArr = s.split(" ");
+
+  if (pattern.length !== wordArr.length) return false;
+
+  for (let i = 0; i < pattern.length; i++) {
+    const char = pattern.charAt(i);
+    const word = wordArr[i];
+
+    if (pattenMap.has(char)) {
+      const val = pattenMap.get(char);
+
+      if (val !== word) return false;
+    } else {
+      pattenMap.set(char, word);
+    }
+
+    if (rev_pattern_map.has(word)) {
+      const val = rev_pattern_map.get(word);
+      if (val !== char) return false;
+    } else {
+      rev_pattern_map.set(word, pattern.charAt(i));
+    }
+  }
+
+  return true;
+}
+console.log(wordPattern("abba", "dog cat cat dog"));
+// ++++ Word Pattern ends here ++++++++++++
+
+// Reverse the vowels in a string
+const vowels = ["a", "e", "i", "o", "u"];
+var reverseVowels = function (s) {
+  let output = s.split("");
+  let cursor1 = 0;
+  let cursor2 = s.length - 1;
+
+  while (cursor1 < cursor2) {
+    if (
+      vowels.includes(s[cursor1].toLowerCase()) &&
+      vowels.includes(s[cursor2].toLowerCase())
+    ) {
+      [output[cursor1], output[cursor2]] = [output[cursor2], output[cursor1]];
+      cursor1++;
+      cursor2--;
+    }
+    if (!vowels.includes(s[cursor1].toLowerCase())) {
+      cursor1++;
+    }
+    if (!vowels.includes(s[cursor2].toLowerCase())) {
+      cursor2--;
+    }
+  }
+
+  return output.join("");
+};
+
+console.log(reverseVowels("hello"));
+
+// +++++++++++++++++++++
+// First Unique character in a string
+function nonRepeat(s) {
+  for (let i = 0; i < s.length; i++) {
+    if (s.indexOf(s[i]) === s.lastIndexOf(s[i])) return i;
+  }
+
+  return -1;
+}
+console.log(nonRepeat("loveleetcode"));
+
+// ++++++++++++++
+// Rotate a string and check if it is equal to goal (target string)
+var rotateString = function (s, goal) {
+  if (s.length !== goal.length) return false;
+  return s.concat(s).includes(goal);
+};
+console.log(rotateString("abcde", "deabc"));
+
+// ++++++++++++++ How to add 2 strings without converting it to integer +++
+var addStrings = function (num1, num2) {
+  let i = num1.length - 1;
+  let j = num2.length - 1;
+  let sum = [];
+  let carry = 0;
+
+  while (i >= 0 || j >= 0 || carry) {
+      let n1 = num1[i] || 0;
+      let n2 = num2[j] || 0;
+
+      let curSum = parseInt(n1) + parseInt(n2) + carry;
+      let reminder = curSum % 10;
+      sum.push(reminder);
+      carry = curSum >= 10 ? 1 : 0;
+      j--;
+      i--;
+  }
+  return sum.reverse().join("");
+};
+console.log(addStrings("323", '956'));
+
+// +++++++++ Remove trailing zero ++++++
+var removeTrailingZeros = function(num) {
+  i = j = 0, str = ''
+
+  while (num.at(-(i + 1)) == 0) i++     // count Trailing Zeros 
+
+  while (j < num.length - i) str += num[j], j++    // copy num to str without Trailing Zeros 
+
+  return str
+};
+console.log(removeTrailingZeros("33222000"));
