@@ -31,11 +31,4 @@
 // JS Questions.....
 // https://learnersbucket.com/examples/topics/interview/
 
-function lengthOfLastWord(s) {
-    // let aa = str.split(" ");
-    // console.log(aa[aa.length-1].length);
 
-    let trimmedString = s.trim();
-    return trimmedString.length - trimmedString.lastIndexOf(' ') - 1;
-}
-  console.log(lengthOfLastWord("Hello World"));

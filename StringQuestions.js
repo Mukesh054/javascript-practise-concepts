@@ -238,28 +238,62 @@ var addStrings = function (num1, num2) {
   let carry = 0;
 
   while (i >= 0 || j >= 0 || carry) {
-      let n1 = num1[i] || 0;
-      let n2 = num2[j] || 0;
+    let n1 = num1[i] || 0;
+    let n2 = num2[j] || 0;
 
-      let curSum = parseInt(n1) + parseInt(n2) + carry;
-      let reminder = curSum % 10;
-      sum.push(reminder);
-      carry = curSum >= 10 ? 1 : 0;
-      j--;
-      i--;
+    let curSum = parseInt(n1) + parseInt(n2) + carry;
+    let reminder = curSum % 10;
+    sum.push(reminder);
+    carry = curSum >= 10 ? 1 : 0;
+    j--;
+    i--;
   }
   return sum.reverse().join("");
 };
-console.log(addStrings("323", '956'));
+console.log(addStrings("323", "956"));
 
 // +++++++++ Remove trailing zero ++++++
-var removeTrailingZeros = function(num) {
-  i = j = 0, str = ''
+var removeTrailingZeros = function (num) {
+  (i = j = 0), (str = "");
 
-  while (num.at(-(i + 1)) == 0) i++     // count Trailing Zeros 
+  while (num.at(-(i + 1)) == 0) i++; // count Trailing Zeros
 
-  while (j < num.length - i) str += num[j], j++    // copy num to str without Trailing Zeros 
+  while (j < num.length - i) (str += num[j]), j++; // copy num to str without Trailing Zeros
 
-  return str
+  return str;
 };
 console.log(removeTrailingZeros("33222000"));
+
+// +++ Longest Palindrome (return number)
+function longestPalindrome(str) {
+  let answer = 0;
+  let obj = {};
+
+  for (const char of str) {
+    obj[char] = (obj[char] || 0) + 1;
+
+    if (obj[char] % 2 === 0) {
+      answer += 2;
+    }
+  }
+  return str.length > answer ? answer + 1 : answer;
+}
+console.log(longestPalindrome("abccccdd"));
+
+// +++++++ Max consecutive characters in a string
+var maxPower = function (s) {
+  let output = 1;
+  let currentPower = 1;
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === s[i + 1]) {
+      currentPower++;
+    } else {
+      output = Math.max(output, currentPower);
+      currentPower = 1;
+    }
+  }
+
+  return output;
+};
+console.log(maxPower("abbcccddddeeeeedcba"));
