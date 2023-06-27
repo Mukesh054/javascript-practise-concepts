@@ -525,7 +525,7 @@ console.log(maxSubArraySumOptimized([-1, -3, 2, 5, 3, 2, -4]));
 
 //++++++++++++++++++ ends here
 
-//+++++++++++ 
+//+++++++++++
 // Greedy Algorithm => Best Time to Buy and Sell Stocks
 const maxProfit = function (prices) {
   let minStockPurchasePrice = prices[0] || 0;
@@ -544,3 +544,41 @@ const maxProfit = function (prices) {
 console.log(maxProfit([7, 6, 4, 3, 1]));
 //++++++++++++++++ ends here
 
+// Insert interval in an array
+var insert = function (intervals, newInterval) {
+  let result = [];
+
+  for (const interval of intervals) {
+    if (interval[1] < newInterval[0]) {
+      result.push(interval);
+    } else if (interval[0] > newInterval[i]) {
+      result.push(newInterval);
+      newInterval = interval;
+    } else {
+      newInterval[0] = Math.min(interval[0], newInterval[0]);
+      newInterval[1] = Math.max(interval[1], newInterval[1]);
+    }
+  }
+
+  result.push(newInterval);
+  return result;
+};
+
+// Merge intervals in the array
+var mergeInterval = function (intervals) {
+  intervals = intervals.sort((a, b) => a[0] - b[0]);
+  let result = [];
+  let pair = intervals[0];
+
+  for (const i of intervals) {
+    if (pair[1] >= i[0]) {
+      pair[1] = Math.max(i[1], pair[1]);
+    } else {
+      result.push(pair);
+      pair = i;
+    }
+  }
+
+  result.push(pair);
+  return result;
+};

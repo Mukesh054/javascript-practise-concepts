@@ -55,8 +55,6 @@
     </div>
 
     <script>
-      const cards = document.querySelectorAll(".card");
-
       // Creating main intersection observer
       const observer = new IntersectionObserver(
         (entries) => {
@@ -70,6 +68,7 @@
       );
 
       // Looping over all cards
+      const cards = document.querySelectorAll(".card");
       cards.forEach((card) => {
         observer.observe(card);
       });
