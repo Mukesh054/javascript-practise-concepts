@@ -1,0 +1,33 @@
+
+body {
+    background-color: rgb(155, 169, 134);
+}
+
+.whiteBox {
+    background-color: white;
+    width: 155px;
+    height: 155px;
+    display: inline-block;
+}
+
+.imgBox {
+    height: 145px;
+    width: 145px;
+    border-radius: 50%;
+    background-image: url('Mukesh.jpg');
+    top: 5px;
+    left: 5px;
+    position: relative;
+}
+
+.hold {
+    background-color: red;
+}
+
+.dashed {
+    border: 3px solid black;
+}
+
+.hide {
+    display: none;
+}

@@ -582,3 +582,27 @@ var mergeInterval = function (intervals) {
   result.push(pair);
   return result;
 };
+
+// Product of array items except itself
+var productExceptSelf = function (nums) {
+  let leftMulti = 1;
+  let rightMulti = 1;
+
+  let leftArr = [];
+  let rightArr = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    leftArr[i] = leftMulti;
+    leftMulti *= nums[i];
+  }
+
+  for (let i = nums.length - 1; i >= 0; i--) {
+    rightArr[i] = rightMulti;
+    rightMulti *= nums[i];
+    rightArr[i] *= leftArr[i];
+  }
+
+  return rightArr;
+};
+
+console.log(productExceptSelf([1, 2, 3, 4]));

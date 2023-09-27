@@ -79,37 +79,54 @@ const groupBy = (values, keyFinder) => {
     // depending upon the type of keyFinder
     // if it is function, pass the value to it
     // if it is a property, access the property
-    const key = typeof keyFinder === 'function' ? keyFinder(b) : b[keyFinder];
-    
+    const key = typeof keyFinder === "function" ? keyFinder(b) : b[keyFinder];
+
     // aggregate values based on the keys
-    if(!a[key]){
+    if (!a[key]) {
       a[key] = [b];
-    }else{
+    } else {
       a[key] = [...a[key], b];
     }
-    
+
     return a;
   }, {});
 };
 console.log(groupBy([6.1, 4.2, 6.3], Math.floor));
-console.log(groupBy(["one", "two", "three"], "length")); 
-
+console.log(groupBy(["one", "two", "three"], "length"));
 
 // Promise ALL
-Promise.myAll = function (values) {
-  return new Promise((resolve, reject) => {
-    let output = [];
-    let completd = 0;
-    values.forEach((value, index) => {
-      Promise.resolve(value)
-        .then((res) => {
-          output[index] = res;
+Promise.myAll = function(promises) {
+  const _promises = promises.map((item) =>
+    item instanceof Promise ? item : Promise.resolve(item)
+  );
 
-          if (completd === values.length) {
-            resolve(output);
+  if (_promises.length === 0) {
+    return Promise.resolve([]);
+  }
+
+  return new Promise((resolve, reject) => {
+    let result = [];
+    let completed = 0;
+    let isError = false;
+
+    _promises.forEach((promise, index) => {
+      promise
+        .then((res) => {
+          if (isError) return;
+          result[index] = res;
+
+          completed++;
+          if (completed === promises.length) {
+            resolve(result);
           }
         })
-        .catch((err) => reject(err.message));
+        .catch((err) => {
+          if (isError) return;
+
+          isError = true;
+
+          reject(err);
+        });
     });
   });
 };
@@ -153,17 +170,16 @@ const test1 = new Promise(function (resolve, reject) {
 // Promise.allSettled
 const allSettled = (promises) => {
   // map the promises to return custom response.
-  const mappedPromises = promises.map(
-    p => Promise.resolve(p)
-    .then(
-      val => ({ status: 'fulfilled', value: val }),
-      err => ({ status: 'rejected', reason: err })
+  const mappedPromises = promises.map((p) =>
+    Promise.resolve(p).then(
+      (val) => ({ status: "fulfilled", value: val }),
+      (err) => ({ status: "rejected", reason: err })
     )
   );
 
-  // run all the promises once with .all 
+  // run all the promises once with .all
   return Promise.all(mappedPromises);
-}
+};
 
 // JSON_STRIGIFY polyfill
 function stringify(data) {

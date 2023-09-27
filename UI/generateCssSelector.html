@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate CSS selector</title>
+  </head>
+  <body>
+    <div id="root">
+      <span>
+        <div>
+          <span>
+            <button>Its Me</button>
+            <button id="target">Click Me!!</button>
+          </span>
+          <span>
+            <button>I am dummy!!</button>
+          </span>
+        </div>
+      </span>
+    </div>
+    <style>
+      div[id="root"]
+        > span:nth-child(1)
+        > div:nth-child(1)
+        > span:nth-child(1)
+        > button:nth-child(2) {
+        background-color: green;
+      }
+    </style>
+    <script>
+      const root = document.querySelector("#root");
+      let target = document.querySelector("#target");
+
+      function getSelectors(root, target) {
+        const selectors = [];
+
+        while (root !== target) {
+          const nth =
+            Array.from(target.parentNode.children).indexOf(target) + 1;
+          const selector = `${target.tagName.toLowerCase()}:nth-child(${nth})`;
+          selectors.unshift(selector);
+          target = target.parentNode;
+        }
+
+        selectors.unshift(`${root.tagName.toLowerCase()}[id=${root.id}]`);
+        return selectors.join(" > ");
+      }
+
+      console.log(getSelectors(root, target));
+    </script>
+  </body>
+</html>

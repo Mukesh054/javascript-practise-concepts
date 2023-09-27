@@ -81,26 +81,17 @@ const isIsomorphic = (str1, str2) => {
 console.log(isIsomorphic(str1, str2));
 
 // IS TWO STRINGS ARE ANAGRAMS
-function isAnagram(first, second) {
-  if (first.length !== second.length) {
-    return false;
+function isAnagram(str1, str2) {
+  if (str1.length !== str2.length) return false;
+
+  let map = new Map();
+
+  for (let i = 0; i < str1.length; i++) {
+    map.set(str1[i], (map.get(str1[i]) || 0) + 1);
+    map.set(str2[i], (map.get(str2[i]) || 0) - 1);
   }
 
-  let obj1 = {};
-  let obj2 = {};
-
-  for (let i = 0; i < first.length; i++) {
-    obj1[first[i]] = (obj1[first[i]] || 0) + 1;
-    obj2[second[i]] = (obj2[second[i]] || 0) + 1;
-  }
-
-  for (const key in obj1) {
-    if (obj1[key] !== obj2[key]) {
-      return false;
-    }
-  }
-
-  return true;
+  return [...map].every(([, count]) => count === 0);
 }
 
 console.log(isAnagram("rat", "tra"));

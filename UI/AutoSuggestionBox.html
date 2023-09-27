@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Suggestion Box</title>
+    <style>
+      main {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      #input {
+        width: 300px;
+        height: 30px;
+      }
+
+      #suggestionArea {
+        margin-top: 20px;
+        width: 300px;
+        min-height: 200px;
+        border: 1px solid green;
+        display: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <input type="text" id="input" placeholder="Enter your query" />
+
+      <div id="suggestionArea"></div>
+    </main>
+
+    <script>
+      const input = document.querySelector("#input");
+      const suggestionArea = document.querySelector("#suggestionArea");
+
+      // Mock Server
+      const FAILURE_COUNT = 10;
+      const LATENCY = 200;
+
+      function getRandomBool(n) {
+        const threshold = 1000;
+        if (n > threshold) n = threshold;
+        return Math.floor(Math.random() * threshold) % n === 0;
+      }
+
+      function getSuggestionData(text) {
+        var pre = "pre";
+        var post = "post";
+        var results = [];
+        if (getRandomBool(2)) {
+          results.push(pre + text);
+        }
+        if (getRandomBool(2)) {
+          results.push(text);
+        }
+        if (getRandomBool(2)) {
+          results.push(text + post);
+        }
+        if (getRandomBool(2)) {
+          results.push(pre + text + post);
+        }
+        return new Promise((resolve, reject) => {
+          const randomTimeout = Math.random() * LATENCY;
+          setTimeout(() => {
+            if (getRandomBool(FAILURE_COUNT)) {
+              reject();
+            } else {
+              resolve(results);
+            }
+          }, randomTimeout);
+        });
+      }
+
+      const onFocus = () => {
+        suggestionArea.style.display = "block";
+      };
+
+      const onBlur = (e) => {
+        if (e.target === input || e.target === suggestionArea) {
+          return;
+        }
+        suggestionArea.style.display = "none";
+      };
+
+      const onChange = async (e) => {
+        const { value } = e.target;
+        suggestionArea.innerHTML = "";
+        if (!value) {
+          return;
+        }
+
+        try {
+          const res = await getSuggestionData(value);
+          if (res.length > 0) {
+            const ul = document.createElement("ul");
+            res.forEach((item) => {
+              const li = document.createElement("li");
+              li.innerText = item;
+              ul.appendChild(li);
+            });
+
+            suggestionArea.innerHTML = "";
+            suggestionArea.appendChild(ul);
+          }
+        } catch (error) {
+          console.error("Error while fetching data", error);
+        }
+      };
+
+      const onClick = (e) => {
+        if (e.target === suggestionArea) {
+          return;
+        }
+
+        const text = e.target.innerText;
+        input.value = text;
+        input.focus();
+      };
+
+      input.addEventListener("focus", onFocus);
+      window.addEventListener("click", onBlur);
+      input.addEventListener("keyup", onChange);
+      suggestionArea.addEventListener("click", onClick, true);
+    </script>
+  </body>
+</html>

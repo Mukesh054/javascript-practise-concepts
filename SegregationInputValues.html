@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Segragating Input Values</title>
+  </head>
+  <body>
+    <form id="parent">
+      <input type="text" name="a.c" value="1" />
+      <input type="text" name="a.b.d" value="2" />
+      <input type="text" name="a.b.e" value="3" />
+      <button type="submit">Show</button>
+    </form>
+
+    <script>
+      const parent = document.querySelector("#parent");
+
+      const inputs = document.querySelectorAll('input[type="text"]');
+
+      document.addEventListener("click", function (e) {
+        e.preventDefault();
+        const result = readValues();
+				console.log(result)
+      });
+
+      function readValues() {
+        return Array.from(inputs).reduce((acc, curr) => {
+          const names = curr.name.split(".");
+
+          let temp = acc;
+
+          names.forEach((name, index) => {
+            if (!temp[name]) {
+              temp[name] = {};
+            }
+
+						if(index === names.length - 1) {
+							temp[name] = curr.value;
+						}
+
+						temp = temp[name];
+          });
+          return acc;
+        }, {});
+      }
+    </script>
+  </body>
+</html>

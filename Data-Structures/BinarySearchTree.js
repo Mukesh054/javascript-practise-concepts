@@ -142,10 +142,46 @@ class BinarySearchTree {
     traverse(this.root);
     return data;
   }
+
+  getMin() {
+    if (this.root === null) return Infinity;
+
+    let min = Infinity;
+    let queue = [this.root];
+
+    while (queue.length > 0) {
+      const current = queue.shift();
+
+      if (current.value < min) {
+        min = current.value;
+      }
+
+      if (current.left !== null) queue.push(current.left);
+      if (current.right !== null) queue.push(current.right);
+    }
+
+    return min;
+  }
+
+  getMinRecursively(root = this.root) {
+    if (root === null) return Infinity;
+
+    let minLeft = this.getMinRecursively(root.left);
+    let minRight = this.getMinRecursively(root.right);
+    
+    return Math.min(root.value, minLeft, minRight)
+  }
 }
 
 var tree = new BinarySearchTree();
-tree.insert(1);
-tree.insert(2);
+tree.insert(10);
+tree.insert(8);
+tree.insert(12);
+tree.insert(6);
 tree.insert(9);
-console.log(tree);
+tree.insert(11);
+tree.insert(14);
+
+console.log(tree.getMin());
+console.log(tree.getMinRecursively());
+// console.log(tree);

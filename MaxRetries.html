@@ -64,6 +64,26 @@
       retryFn(testFunction(), 6, 1000)
         .then((value) => console.log(value))
         .catch((err) => console.log(err));
+
+      // +++++++++++++++++++ 2nd way
+      function fetchWithRetry(fetcher, retries) {
+        return new Promise((resolve, reject) => {
+          let retry = 0;
+          let callFetcher = fetcher().then(
+            (data) => resolve(data),
+            (error) => {
+              if (retry < retries) {
+                callFetcher();
+                retry++;
+              } else {
+                reject(error);
+              }
+            }
+          );
+
+          callFetcher();
+        });
+      }
     </script>
   </body>
 </html>
