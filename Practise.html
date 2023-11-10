@@ -4,22 +4,117 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <!-- <script src="CustomFetch.js" defer></script> -->
+    <title>Drag & Drop</title>
     <style>
-      .blue {
-        background-color: blue;
-        height: 10px;
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap");
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+
+        box-sizing: border-box;
       }
-      .red {
+
+      body {
+        padding: 20px;
+      }
+
+      button {
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        background-color: rgb(222, 222, 113);
+        cursor: pointer;
+      }
+
+      .containers {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .container {
+        width: 100%;
+        border-radius: 5px;
+        margin: 10px;
+        padding: 20px 10px;
         background-color: red;
-        height: 10px;
+      }
+
+      #first {
+        background: yellowgreen;
+      }
+      #second {
+        background: rgb(202, 139, 139);
+      }
+
+      #third {
+        background: rgb(162, 209, 162);
+      }
+
+      textarea {
+        background-color: #fff;
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 10px;
+
+        resize: vertical;
+        border: none;
+        padding: 10px;
+        outline: none;
+      }
+
+      .drag {
+        background-color: rgba(117, 74, 74, 0.46);
       }
     </style>
   </head>
   <body>
-    <div class="blue red"></div>
-    <div class="red blue"></div>
-    <script></script>
+    <button>+</button>
+    <div class="containers">
+      <div class="container" id="first">
+        <h2>Add todo</h2>
+      </div>
+      <div class="container" id="second">
+        <h2>In Progress</h2>
+      </div>
+      <div class="container" id="third">
+        <h2>Done</h2>
+      </div>
+    </div>
+    <script>
+      const btn = document.querySelector("button");
+
+      btn.addEventListener("click", (e) => {
+        const textArea = document.createElement("textarea");
+        textArea.id = Math.random() * 100;
+        textArea.draggable = true;
+
+        textArea.addEventListener("dragstart", (e) => {
+          e.dataTransfer.setData("text", e.target.id);
+          e.target.classList.add("drag");
+        });
+
+        textArea.addEventListener("dragend", (e) => {
+          e.target.classList.remove("drag");
+        });
+
+        const firstContainer = document.getElementById("first");
+        firstContainer.appendChild(textArea);
+      });
+
+      const containers = document.querySelectorAll(".container");
+
+      for (const container of containers) {
+        container.addEventListener("dragover", (e) => {
+          e.preventDefault();
+        });
+
+        container.addEventListener("drop", (e) => {
+          e.preventDefault();
+          const ID = e.dataTransfer.getData("text");
+          e.target.appendChild(document.getElementById(ID));
+        });
+      }
+    </script>
   </body>
 </html>

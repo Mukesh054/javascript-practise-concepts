@@ -5,17 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css"></link>
+    <link href="./style.css" rel="stylesheet" />
 </head>
 <body>
-
-    <div id="addTodoListDiv">
-        <input id="addTodoListInput" class="comment" />
-        <button id="addTodoListButton" class="btn-save">Add new to-do list</button>
+    <button>+</button>
+    <div class="containers">
+        <div class="container" id="first">
+            <h2>Todo</h2>
+        </div>
+        <div class="container" id="second">
+            <h2>In Progress</h2>
+        </div>
+        <div class="container" id="third">
+            <h2>Done</h2>
+        </div>
     </div>
-    
-    <div id="root"></div>
-
     <script src="script.js"></script>
-</body>  
+</body>
 </html>

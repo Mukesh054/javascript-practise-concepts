@@ -1,16 +1,4 @@
 
-// Topics to cover in Javascript
-/**
- * Test driven development     => done
- * How to use Profiler         => done
- * Lighthouse                  => done
- * Regular Expressions         => done
- * Date functions in detail
- * Accessibility (https://www.youtube.com/watch?v=fGLp_gfMMGU&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&index=2)
- * Web Sockets
- * Asynchronous Programming
- */
-
 // JS Questions.....
 // https://learnersbucket.com/examples/topics/interview/
 
@@ -47,6 +35,8 @@
  * 
  */
 
-// 27 Sep doable
-// Drag & Drop - code with Harry   => done
-// https://www.youtube.com/watch?v=3PHXvlpOkf4
+/**
+ * Drag & Drop practise -> 1 hr
+ * 1 ques DSA -> 1 hr
+ * 1 pratice in JS
+ */
