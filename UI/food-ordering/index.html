@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Food Ordering App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main-heading">
+        Restaurants
+      </div>
+      <div class="filters">
+        <div class="sort">
+          <div class="search">
+            <input type="search" id="search-text" placeholder="Search restaurant">
+          </div>
+          <select id="sort_by">
+            <option value="">--Sort by--</option>
+            <option value="name">Name</option>
+            <option value="location">Location</option>
+            <option value="rating">Rating</option>
+          </select>
+          <select id="filter_by_tag">
+            <option value="">--Filter by tag--</option>
+            <option value="Indian">Indian</option>
+            <option value="Fast food">Fast food</option>
+            <option value="Chinese">Chinese</option>
+          </select>
+          <button class="btn show-favorites-btn">Show Favorites</button>
+        </div>
+      </div>
+      <div class="restaurants-wrapper">
+        <template id="list-item-template">
+          <div class="card">
+            <div class="mark-favourite"></div>
+            <h3 class="heading-text">Dummy text</h3>
+            <p class="location">Location: Chandigarh</p>
+            <p class="rating">Rating: 5</p>
+            <p class="tags">Tags: Chinese, Indian</p>
+          </div>
+        </template>
+      </div>
+    </div>
+  </body>
+</html>

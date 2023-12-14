@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Popover with backdrop</title>
+  </head>
+  <body>
+    <div class="container" id="blur">
+      <div class="content">
+        <h2>My details</h2>
+        <img
+          src="https://media.istockphoto.com/id/1449436857/photo/water-splash-isolated-on-white-background.jpg?s=1024x1024&w=is&k=20&c=Yi9QBjpQIUABaaZpaisgcr2zVS_88GKlEJ2Ysm-ktbM="
+          alt="img"
+        />
+        <a href="#" onclick="toggle()">Read More</a>
+      </div>
+    </div>
+    <div id="popup">
+      <h2>Popup</h2>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum fugiat
+        quis magni consequatur veniam voluptate, omnis dolor vitae facilis et
+        repudiandae cumque saepe iusto sunt! Deleniti accusamus quod id
+        repellat. Perspiciatis reprehenderit vero ut, eius quis voluptatem dolor
+        adipisci porro maxime recusandae optio provident eaque aliquid tempore
+        aliquam harum sit fugiat? Laudantium dolores odit praesentium quod harum
+        non excepturi nam. Voluptatum voluptatem distinctio error nihil esse,
+        obcaecati repellat, veritatis perferendis alias cupiditate fugit a
+        itaque ratione quisquam? Soluta provident sequi reiciendis accusamus
+        delectus magnam, quisquam ad sint, cupiditate id quia. Hic, rem amet!
+        Facere rerum dolore obcaecati dolorem, alias accusamus ipsum ab. Vel,
+        iusto voluptatem! Ipsam atque minus provident mollitia? Est adipisci
+        sapiente magnam odio suscipit doloremque exercitationem iste molestiae!
+      </p>
+      <a href="#" onclick="toggle()">Close</a>
+    </div>
+    <script>
+      function toggle() {
+        const blur = document.getElementById("blur");
+        blur.classList.toggle("active");
+
+        const popup = document.getElementById("popup");
+        popup.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

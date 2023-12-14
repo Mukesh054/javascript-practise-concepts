@@ -1,4 +1,11 @@
 
+// Hanuman calls
+// 2hr - 1st Dec
+// 1hr - 4th Dec
+// 4hr - 7th Dec
+// 1hr - 8th Dec
+// 
+
 // JS Questions.....
 // https://learnersbucket.com/examples/topics/interview/
 
@@ -27,16 +34,18 @@
 // 22) Course Schedule
 // 23) Reverse linked list
 
+// Machine coding round
+1) Nested comments functionality
+2) To do list (like JIRA, drag & drop list items and list itself & list items sorting )
+3) Food ordering app => done
+4) Calendar app   => done
+5) Email Web app
+6) Sudoku game           => to be done
+7) Popover with backdrop => to be done
 
-// UI FRONTEND TASKS
 /**
- * Create a JIRA/Trello clone where cards can be created, deleted and dragged and dropped between different lists. State retention on app reload is a nice to have
- * Create a progress bar that takes n seconds to complete. Make the progress bar queueable, i.e., on button click, the progress bar should restart after the current one is complete.
- * 
+ * Learner's bucket - 1hr Javascript Machine Coding round
+ * System Design - 1 hr
+ * AWS - 1hr
  */
 
-/**
- * Drag & Drop practise -> 1 hr
- * 1 ques DSA -> 1 hr
- * 1 pratice in JS
- */
