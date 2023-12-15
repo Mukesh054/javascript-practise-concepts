@@ -43,6 +43,8 @@
 6) Sudoku game           => to be done
 7) Popover with backdrop => to be done
 
+Lerna mono repo
+
 /**
  * Learner's bucket - 1hr Javascript Machine Coding round
  * System Design - 1 hr
