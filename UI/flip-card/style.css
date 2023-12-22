@@ -1,0 +1,47 @@
+body {
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    position: absolute;
+    width: 250px;
+    height: 320px;
+    background: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.card {
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+}
+
+.front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #ffc728;
+    color: #000;
+    backface-visibility: hidden;
+}
+
+.back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    background-color: purple;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card {
+    transform: rotateY(180deg);
+}

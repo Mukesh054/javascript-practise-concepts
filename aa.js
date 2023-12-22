@@ -1,11 +1,4 @@
 
-// Hanuman calls
-// 2hr - 1st Dec
-// 1hr - 4th Dec
-// 4hr - 7th Dec
-// 1hr - 8th Dec
-// 
-
 // JS Questions.....
 // https://learnersbucket.com/examples/topics/interview/
 
@@ -37,17 +30,25 @@
 // Machine coding round
 1) Nested comments functionality
 2) To do list (like JIRA, drag & drop list items and list itself & list items sorting )
-3) Food ordering app => done
-4) Calendar app   => done
+3) Food ordering app                               => done
+4) google Calendar app                             => done
 5) Email Web app
-6) Sudoku game           => to be done
-7) Popover with backdrop => to be done
+6) Sudoku game                                     => done
+7) Popover with backdrop                           => done
+8) Nested checkboxes     
+9) Microsoft like excel sheet
+10) Render forms dynamically on UI based on config
+11) Progress Bar                                    => done
+12) Implementing Star Rating Widget
+13) Twitter Post like textarea
+14) Design Cart Page
+15) Design Product listing page with filters and sorting
+16) 
 
-Lerna mono repo
 
 /**
- * Learner's bucket - 1hr Javascript Machine Coding round
+ * BFE Dev - 1hr Javascript Machine Coding round
  * System Design - 1 hr
- * AWS - 1hr
+ * Machine Coding Round - 1hr
  */
 
