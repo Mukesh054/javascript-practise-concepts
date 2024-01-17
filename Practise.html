@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">Increment</button>
+    <p id="val">0</p>
+    <script>
+      const btn = document.getElementById("btn");
+      const val = document.getElementById("val");
+
+      function callMe() {
+        let count = 0;
+        return function () {
+          return count++;
+        };
+      }
+
+      const call = callMe();
+
+      btn.addEventListener("click", function (e) {
+        let res = call();
+        val.innerHTML = res;
+      });
+    </script>
+  </body>
+</html>

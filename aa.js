@@ -52,3 +52,9 @@
  * Machine Coding Round - 1hr
  */
 
+
+
+// My actions items
+1) Immutability helper
+2) My own urlsearch params
+3) Create custom cookie
