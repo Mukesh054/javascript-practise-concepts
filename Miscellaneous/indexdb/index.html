@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index DB</title>
+    <script type="module" src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <section>
+        <form id="myForm" name="whiskeyForm">
+          <div class="row">
+            <div class="label">Name</div>
+            <input type="text" name="name" id="name" />
+          </div>
+          <div class="row">
+            <div class="label">Age</div>
+            <input type="text" name="age" id="age" />
+          </div>
+          <div class="row">
+            <div class="label">Country</div>
+            <input type="text" name="country" id="country" />
+          </div>
+          <div class="buttons">
+            <button id="addBtn">Add</button>
+            <button id="updateBtn">Update</button>
+            <button id="deleteBtn">Delete</button>
+            <button id="resetBtn">Reset</button>
+          </div>
+        </form>
+      </section>
+      <section>
+        <h3>List items</h3>
+        <ul class="wList"></ul>
+      </section>
+    </div>
+  </body>
+</html>
