@@ -479,7 +479,7 @@ function removeDuplicatedFromUnsortedArrayOptimized(arr) {
   return i + 1;
 }
 console.log(
-  removeDuplicatedFromUnsortedArrayOptimized([0, 0, 1, 1, 2, 2, 3, 4])
+  removeDuplicatedFromUnsortedArrayOptimized([0, 0, 1, 1, 2, 2, 3, 4, 5])
 );
 // Remove duplicate entries from an array and return the duplicate count
 
@@ -605,4 +605,4 @@ var productExceptSelf = function (nums) {
   return rightArr;
 };
 
-console.log(productExceptSelf([1, 2, 3, 4]));
+console.log(productExceptSelf([1, 2, 3, 4])); // [24, 12, 8, 6]

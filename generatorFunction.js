@@ -41,7 +41,8 @@ const getUsers = customAsyncGeneratorFunction(function* () {
 const obj = {
   [Symbol.iterator]: function () {
     let step = 0;
-    const iterator = {
+    
+    return {
       next: function () {
         step++;
 
@@ -54,7 +55,6 @@ const obj = {
         return { value: undefined, done: true };
       },
     };
-    return iterator;
   },
 };
 

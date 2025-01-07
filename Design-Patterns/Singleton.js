@@ -15,3 +15,8 @@ var Singleton = (function () {
     },
   };
 })();
+
+const myInstance = Singleton.getInstance();
+const myInstance2 = Singleton.getInstance();
+
+console.log(myInstance === myInstance2) // true

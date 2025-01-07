@@ -1,0 +1,158 @@
+
+JavaScript {
+    - Poor knowledge of JS concepts
+    - Do not know lot of basic concepts.
+    - POOR level knowledge in Javascript
+    - POOR theoretical knowledge
+    - POOR problem solving skills according to experience
+    - Poor coding skills, it seems candidate cram the concepts.
+    - Not aware of concepts which are after ES6
+    - Candidate worked on older technologies
+
+    Candidate answered some basic/advance concepts like
+    - Closure: No
+    - Currying: No
+    - Memoization: No
+    - Performance: POOR
+    - Security Best Practises: No
+    - Prototype Chain: Yes
+    - Design Patterns: Basic
+    - SOLID principles: Basic
+    - Generators: No
+    - Monorepo: No
+    - Microfrontend: No
+
+
+    Object Oriented Programming {
+        He has good understanding of OOPS
+        interface: Yes
+        Abstract class: Yes
+    }
+
+    Cache: {
+        Redis: Intermediate knowledge only. Also knows the pros/cons
+        Memcache: No
+    }
+
+    SOLID {
+        - Have basic idea of SOLID principles
+        - Candidate only knows full form of SOLID
+    }
+
+    Design Patterns {
+        - Very poor in design patterns
+        - Only knows Singleton, nothing else
+
+        - Singleton: Basic
+        - Facade: No
+        - Factory: No
+    }
+}
+
+Containerization {
+    Docker {
+        - Never worked in Docker
+
+        - Have basic understanding of Docker
+        - No advance knowledge
+    }
+
+    Kubernates: {
+        - No idea
+    }
+}
+
+Devops {
+    - No idea
+}
+
+Cloud Platforms {
+    AWS {
+        - Only have idea of EC2, ECS. Nothing else
+
+        Lambda: Basic
+        Queues: No
+        ECS: Yes
+    }
+}
+
+Security {
+    Poor response
+
+    She do know much about web security aspects. Very POOR
+
+    CORS: Yes
+    OWASP: No
+    CSP: No
+}
+    CSRF: No
+
+Web communication Protocols {
+    - Do not know difference between PUT/PATCH
+    - Only have idea of HTTP/HTTPs, Graphql, Websockets,
+
+    - Good idea of HTTP, Graphql, websockets, Webhooks & SSE.
+    - Have basic knowledge of almost all protocols.
+
+    - Poor idea of HTTP and other web communication protocols.
+    - No idea of Graphql, Websockets, SSE Polling, SSE, Web Hooks etc.
+}
+
+Software Quality {
+    - She has basic understanding of code quality tools.
+    - No good knowledge
+
+    Eslint: Yes
+    Jest: No (No idea of testing)
+    Sonarqube: No
+}
+
+Message Queue {
+    RabbitMQ: Yes
+    Kafka: No
+}
+
+Angular {
+    
+    - Candidate just started working on Angular and she only worked on version below 2.
+    - She recently entered JS world and do not know most of the things.
+    - She do not know even 1% of Angular.
+    
+    
+}
+
+REACT: {
+    - Knows almost all required concepts in React JS.
+    
+    - Average knowledge of React theoretically.
+    - Average knowledge of any bundling tool.
+    - Average level knowledge of performance & optimization techniques.
+    - Average arcitectural knowledge
+    - POOR in Unit testing
+    - It seems like candidate prepared required interview questions.
+    
+
+    - POOR knowledge of React
+    - Do not know required concepts in React JS.
+    - POOR knowledge of any bundling tool.
+    - Very poor knowledge of performance & optimization techniques.
+
+    But theoretically::
+    - Average knowledge in React JS
+    - Good knowledge of performance and optimization strategies
+    - HOC: No
+    - Redux: Basic
+    - Thunk: No
+    - Lifecycles: Yes
+    - Testing: No
+    - Storybook: Yes
+    - Context API: Yes
+    - react-query: Yes
+    - Styled Components: Yes
+    - useMemo/useCallback: Basic
+    - RenderProps: No
+    - React.memo: Yes
+    - Routing in React: Yes
+    - Webpack:  Basic
+    - Refs/ForwardRef: Yes
+}

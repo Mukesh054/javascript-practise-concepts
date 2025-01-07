@@ -1,0 +1,87 @@
+
+Javascript {
+    - Security {
+        XSS:  
+        CSRF: 
+        Content Security Policy => 
+        eTag: 
+    },
+    WebCommmunication Protocol {
+        HTTP => 
+        WebSocket: 
+        WebHooks: 
+        SSE => 
+        Graphql => 
+    },     => 
+    Performance & Optimization: {
+        Fonts (in case of chrome as it has 3 sec wait time): {
+            font-display: auto | block | swap | fallback | optional
+            -> auto: already defined by user agent like Safari, chrome etc  
+            -> block:[FOIT] First it will wait for 3s to download and show white screen. After completing 3s it will show default font. And when download complete, it swap it with downloaded fonts.
+            -> swap: [FOUT] It does not have block period. It simply shows default font and then swap it with downloaded font.
+            -> fallback | optional: It simply shows the system font if source does not get downloaded in the given time frame. It never swap it even after successful download of resouce to prevent layout shift (Reflow) 
+        },
+        Resource Hinting: {
+            -> dns-prefetch: It caches the DNS or URL before actual call to that URL. Eg: Google font api,
+            -> preconnect: same as dns-prefetch (advance version). Additioanlly manage TCP, TLS protocols,
+            -> preload: download css/JS in advance for current page.
+            -> prefetch: download css/JS in advance for next pages.
+            -> prerender: Same as prefetch. But in addition to download resources, it also executes them and find nested resources & repeat the process.
+        },
+        css [Reflow]: { => 
+            1) Use Flex/Grid, it reduces reflow
+            2) Do not use complex selectors
+            3) Use position: absolute or fixed in animations
+        },
+        Caching Types: {
+            Service workers,
+            Localstorage/SessionStorage,
+            HTTP Caching (most optimized approach done by browser/server discussion): {
+                -> max-age: By how much time browser can keep this resource in cache, if time expires needs to ask to server again,
+                -> public: From client to server we can have multiple entities in between. They all can store resource in their own caches. And when next time we request it sends from cache,
+                -> private: We can cache the things near to end user i.e. on browser itself,
+                -> no-cache: Browser first ask to server if you have new version of this resource or i can show it from my cache,
+                => no-store: always ask from the server. NO UI cache,
+                => eTag: Browser can identify that which version of resource is this. If version does not match, it calls the server and get the result.
+            }
+        }
+    }
+}
+
+Typescript {
+    Generics => 
+    Omit & Partial => 
+}
+
+React {
+    - Diff between useMemo & useCallback;   
+    - Name 1-2 features which came in React 19
+}
+
+Angular {
+    - Best use case for resolvers & live examples    => 
+    - Controlvalue Accessor: No
+    - Why Observables over Promises & What is working of SwitchMap : 
+    - ReplaySubject - Prev send data can be get by passing no. of arguments & then future data => 
+}
+
+Node {
+    - Diff between asynchronous & non-blocking
+    - If node is single threaded .. How it handles multiple concurrent request => 
+    - Custom Rate Limiter => 
+    - Diff b/w Candidate key & Primary key   => 
+    - Left join => 
+    - Graphql - Apollo
+    - Lerna - 
+    - Lighthouse - 
+    - Cryptography -  
+    - JWT => 
+    - Middleware - 
+    - AWS queues = {
+            SQS, SNS
+        }
+    - Lambda - 
+    - Lead level Responsibility
+    - git rebase - 
+    - Solid Principles => 
+}

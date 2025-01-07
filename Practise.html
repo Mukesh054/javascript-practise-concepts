@@ -4,27 +4,84 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
   </head>
   <body>
-    <button id="btn">Increment</button>
-    <p id="val">0</p>
     <script>
-      const btn = document.getElementById("btn");
-      const val = document.getElementById("val");
 
-      function callMe() {
-        let count = 0;
-        return function () {
-          return count++;
-        };
+      const distributionAttributes = [
+  { field: "headers.tenant_id", operator: "eq", value: "VMB1", group: null },
+
+  { field: "headers.client_id", operator: "neq", value: "CL1", group: null },
+
+  { field: "headers.client_id", operator: "neq", value: "CL2", group: null },
+
+  { field: "headers.tenant_id", operator: "eq", value: "VMB2", group: null },
+
+  { field: "headers.product_id", operator: "eq", value: "PROD", group: null },
+];
+
+
+function groupBy(arr, field) {
+    return arr.reduce((acc, curr, index) => {
+      let key = curr[field];
+      if(key === null) {
+        key = index + 1
       }
+  
+      if (!acc[key]) {
+        acc[key] = [];
+      }
+  
+      acc[key].push(curr);
+      return acc;
+    }, []);
+  }
+  const data = groupBy(distributionAttributes, "group");
+  let newData = [];
+  for (const key in data) {
+    newData.push({items: data[key]})
+  }
+  // console.log(newData, "items data")
 
-      const call = callMe();
-
-      btn.addEventListener("click", function (e) {
-        let res = call();
-        val.innerHTML = res;
+  const result = [];
+  if(newData.length) {
+      newData.forEach((item, index) => {
+        const timestamp = Math.floor(new Date().valueOf() * Math.random());
+        if(item && item.items && item.items.length) {
+          (item.items).forEach((x, i) => {
+            result.push({
+              ...x,
+              group: index + 1,
+              id: i == 0 ? timestamp : Math.floor(new Date().valueOf() * Math.random()),
+              ref: i == 0 ? null : timestamp,
+              clause: i == 0 ? "and" : "or",
+            })
+          })
+        }
       });
+    }
+
+    // console.log(result)
+
+
+    const aa = [
+  { field: "headers.tenant_id", operator: "eq", value: "VMB1", group: 5 },
+
+  { field: "headers.client_id", operator: "neq", value: "CL1", group: 1 },
+
+  { field: "headers.client_id", operator: "neq", value: "CL2", group: 2 },
+
+  { field: "headers.tenant_id", operator: "eq", value: "VMB2", group: 3 },
+
+  { field: "", operator: "", value: "", group: 4 },
+  ];
+
+  let isEmptyRow = false;
+  const someAreNotEmpty = aa.every((el) => Object.values(el).every(e => e !== ''));
+
+  console.log(someAreNotEmpty)
+
     </script>
   </body>
 </html>

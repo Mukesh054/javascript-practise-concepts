@@ -1,0 +1,414 @@
+
+Javascript {
+    - Average theoretical knowledge.
+    - Poor coding skills, it seems candidate cram some of the concepts.
+    - Not aware of concepts which are after ES6
+    - No hands-on on required concepts
+    
+    - Poor knowledge of JS concepts
+    - Do not know lot of basic concepts.
+    - POOR level knowledge in Javascript
+    - Candidate worked on older technologies
+    - POOR problem solving skills according to experience
+
+    
+
+    - Candidate have very good knowledge in JS.
+    - Good problem solving skills
+    - Candidate knows searching and sorting approaches.
+    - Candidate is well versed in DSA approaches
+    - He performed more than average in JS
+
+    - Candidate does not have good expertise in JS concepts according to her experience.
+    
+}
+
+Javascript 11/11 {
+    Candidate answered some basic/advance concepts like
+    - Closure: Basic
+    - Currying: No
+    - Memoization: Basic
+    - Performance: No
+    - Security Best Practises: No
+    - Prototype Chain: No
+    - Design Patterns: No
+    - SOLID principles: No
+    - Generators: No
+    - Monorepo: No
+    - Microfrontend: No
+
+
+
+
+
+}
+
+Typescript {
+
+    Candidate has sound understanding of Typescript concepts like interfaces, classes, enum, types and some advance concepts like partial and Omit etc.
+
+    - Very Poor in typescript
+    - Only knows interfaces
+    - Never worked in advance typescript
+
+    - Never worked in typescript
+
+    - Candidate has understanding of basic typescript concepts and can work easily in project.
+    - Candidate do not know advance/basic concepts like partial. omit etc.
+    
+    Candidate also knows advance concepts like partial. omit etc.
+    
+    
+}
+
+Web Security {
+    POOR in this section
+    - OWASP 10: No
+    - CORS: Yes
+    - CSP: No
+    - CSRF: No
+
+    - JWT: Yes
+    - SSRF: No
+    - XSS: No
+}
+
+Web communication protocol {
+    - Do not know even basic concepts. Very POOR
+
+    
+    - Do not know difference between PUT/PATCH
+    - Only have idea of HTTP/HTTPs, Graphql, Websockets,
+
+    - Good idea of HTTP, Graphql, websockets, Webhooks & SSE.
+    - Have basic knowledge of almost all protocols.
+
+    - Poor idea of HTTP and other web communication protocols.
+    - No idea of Graphql, Websockets, SSE Polling, SSE, Web Hooks etc.
+}
+
+Software engg practises {
+    - well known in code review process
+    - Well known in knowledge sharing
+    - Well in GIT commands like rebase, merge, fetch
+    - Have knowledge of Testing approaches
+}
+
+HTML {
+    Poor knowledge of HTML as they have separate persons who work in HTML part.
+    Average knowledge of HTML as candidate mostly work in backend.
+
+    - VERY VERY POOR
+    - They have separate team which work in HTML.
+
+    Average knowledge of HTML & related best practices.
+    - Semantic elements : Good
+    - Video/Audio: Yes
+    - Mobile/Desktop approach: Yes
+    - Other concepts: Yes
+    - Accessibility: No
+    - BOM: No
+    - CSSOM: No
+
+
+}
+
+CSS {
+    Average knowledge of CSS as candidate mostly work in backend.
+
+    - VERY VERY POOR
+
+    - They have separate team which work in CSS.
+
+    Candidate has good knowledge of CSS.
+    - Display/Positions: Yes
+    - Units: No
+    - Flexbox: Yes
+    - Media queries: No
+    - Animations/Transitions : Yes
+    - Frameworks: Bootstrap, tailwind
+    - Pseudo classed and elements: Yes
+    - Positions: Yes
+    - SCSS : No
+
+}
+
+
+Node 
+{
+
+    - Overall average in Node JS
+    - No idea of testing.
+    - Asynchronous & Non-blocking : No
+    - Middlewares : Yes
+    - JWT : Yes
+    - Promises : Yes (only theoretical)
+    - AWS : Yes (Only S3, EC2 no knowledge of Lambda and other service)
+
+    - AZURE : Basic knowledge only
+
+    - AWS : Yes (EC2, S3, Lambda & basics of AWS)
+
+    - Candidate worked on Express JS framework. Candidate has good idea of architecture, modules, scopes, events, child processes(no) etc.
+    - Event loop - average
+    - Events : Yes
+    - Express: Yes
+}
+
+Infrastrucure & cloud {
+    He said: NEVER
+
+    Never (little bit theoretical knowledge)
+
+    Good idea of few AWS services like EC2, S3.
+    Good idea of few AWS services like EC2, Lambda etc.
+
+    Only have basic idea of GCP and Azure.
+}
+
+Databases {
+    - Beginner in SQL
+    - Candidate was not comfortable to write a basic join query.
+    - ACID principles: No
+    - Relationships: No
+    - No idea of normal forms.
+    - No idea of candidate key
+
+
+    - No hands-on on writing queries
+    - Candidate said he has only basic knowledge of DB
+
+    SQL {
+
+    - Candidate was able to write join query accurately.
+    - Do have knowledge of basic concepts like Normal forms, ACID etc.
+    - Good idea of Candidate key and normal forms.
+    - Average idea of query optimization
+
+    - Good idea of aggregation queries like group_concat etc.
+    
+    - Beginner
+
+    - He worked on RDBMS couple of months back.
+    }
+
+    NoSql {
+        - Beginner
+
+        - Basic idea of MongoDB
+        - Basic idea of join collections.
+        - Sharding: Basic
+        - Average level knowledge
+        - Replication & Aggregation: only basic knowledge
+
+        Same as mentioned above in SQL section
+    }
+}
+
+Frameworks {
+    - Candidate worked on Express JS/Nest JS and related libraries. Candidate has poor knowledge of routing, middlewares, best practices etc.
+    - No knowledge of MVC pattern
+
+    Candidate worked on Express JS and related libraries. 
+    - Average middleware knowledge
+    - Average response
+}
+
+Service deployment {
+    - There is a separate team responsible for deployment - He said.
+    
+    - Candidate have knowledge of Swagger, Authentication etc
+    - Candidate have no experience of deployment.
+    - No knowledge of any bus messaging system
+
+    - Basic knowledge of KAFKA
+
+}
+
+Performance Optimization {
+    He explained everything in details.
+    
+    - POOR knowledge 
+    POOR in this section.
+    - Service/Web workers: No
+    - Lighthouse: Yes
+    - Critical Rendering path: No
+    - Repaint/Reflow mechanism: No
+    - Web Vitals: No
+    - Memory Leak Mechanism: No
+    - Network optimization: No
+    - Caching: No
+    - Compression: No
+
+    - Clustering: Basic
+    - Load balancer: No
+    - Obsfucation/Minification: No
+
+    Very poor response::
+
+
+    - Poor knowledge 
+    Poor in this section.
+    - Memory Leak detection tools: Yes
+    - Load balancing: No
+    - Network optimization: No
+}
+
+Angular {
+    Candidate performed average in Angular section.
+    - Basic knowledge of bundling tool.
+    - No Knowledge of creating custom form component like control value accessors.
+    - Average knowledge on State management library like NgXs/rx
+    - POOR in Unit testing.
+    - POOR Knowledge of architecture & token mechanism.
+    - POOR theoretical knowledge and average hands on
+    - When i asked scenario based question, candidate did not perform well.
+    - Candidate have POOR knowledge of forms, validations, basic reactive programming etc.
+    
+    - Poor in RXJS
+    - RXJS & its operators: No
+    - Subjects: No
+    - Singleton Pattern knowledge: Yes (only theoretical)
+    - Dependency Injection: No but Very confused in this
+    - NgRx: average
+    - Testing: POOR
+    - Resolvers: Yes
+    - Forms: No
+    - Controlvalue Accessor: No
+    - Webpack: basic
+    - Angular Zone: Yes
+}
+
+Amazon web services {
+    Please refer to "Infrastrucure & cloud" section
+}
+
+Product Engineering skills {
+    - Has basic idea of problem solving and other data structures like Array, string etc.
+}
+
+Suggestions for a candidate {
+    - He should be well versed with problem solving skills.
+    - Rest part is OK according to his experience.
+    - Need to improve more on Performance/Security
+
+    According to his experience and position, he should be well versed in following areas:
+    - Need to learn more about Vanilla JS
+    - Average in Performance & Security concepts.
+    - More advance Web knowledge needed.
+    
+    - POOR UI knowledge
+    - He has very less experience, never faced critical scenarios. Hence failed.
+    
+
+    According to her experience, she firstly needs to focus more in problem solving skills then she can move to learn core JS concepts.
+
+}
+
+Summary {
+    As mentioned above in all the individual sections & according to his expertise he is not suitable fit for our expectations.
+    I asked him lot of basic questions, according to his experience he was unable to answer to questions.
+
+    Coding questions:
+        - I asked him 4 questions, he completed 2 (I also gave hints)
+        - Average coding skills
+        - Not familiar with required concepts and terminologies in JS
+
+    Theoretical questions:
+        - He is average in this section.
+        - He was not confident with his answers.
+
+    - Overall impression: REJECTED!!!
+    - Communication Skills: Candidate can communicate very well.
+    - Strength: Candidate can explain well what he exactly knows.
+    - Weakness: Candidate is poor in Vanilla JS/Web/Security/Vue but good in HTML/CSS
+
+    Impression: He can develop web page from scratch using custom css following all Accessibility guidelines but poor in JS/React concepts.
+
+    Impression: He can develop web page from scratch using custom css following all Accessibility guidelines.
+
+    According to me, I will not hire him in my team.
+
+    A strong No!!!
+
+    Thanks
+}
+
+REACT: {
+    - Average knowledge of React theoretically.
+    - Knows almost all basic concepts in React JS.
+    - Average knowledge of any bundling tool.
+    - POOR level knowledge of performance & optimization techniques.
+    - Average architectural knowledge
+    - POOR in Unit testing
+    - POOR in error handling knowledge
+    
+    - It seems like candidate prepared required interview questions.
+
+    - POOR knowledge of React
+    - Do not know required concepts in React JS.
+    - Average knowledge of any bundling tool.
+    - Poor knowledge of performance & optimization techniques.
+    - POOR testing knowledge
+    - Architectural level basic knowledge only.
+    - No knowledge of lifecycles
+
+    But theoretically::
+    - Average knowledge in React JS
+    - Average knowledge of performance and optimization strategies
+    - HOC: Yes
+    - Redux: Yes (upto below average level)
+    - Thunk: Basic
+    - Lifecycles: Average
+    - Testing: No
+    - Storybook: No
+    - Context API: Yes
+    - react-query: No
+    - Styled Components: No
+    - useMemo/useCallback: POOR
+    - RenderProps: No
+    - React.memo: No
+    - Routing in React: Yes
+    - Webpack: Basic
+    - Refs/ForwardRef: Yes/NO
+}
+
+Vue {
+    Good knowledge of Vue JS. Never used any state management library.
+    Good knowledge of Vue JS.
+
+    Note:
+        - I experienced that candidate is only having theoretical knowledge of Vue.
+        - When i asked for architectural questions - She failed.
+    
+
+    - Candidate have more than average knowledge in VUE JS but does not have advance knowledge. He can easily work in VUE JS
+    - He does not have architectural level knowledge
+
+    - Candidate have more experience and knowledge is on Angular than VUE JS.
+    - She performed average in VUE JS.
+    - She recently started working on VUE JS
+
+    I asked theoretical questions:-
+    - Mixins: Basic
+    - Plugins: No
+    - $parent: Yes
+    - Vuex: Yes
+    - Pinia: No
+    - Testing: Yes
+    - Performance: Basic
+    - Watchers: Yes
+    - Computed Properties: Yes
+    - Routing: Yes
+    - $emit: Yes
+    - v-show/v-if: Yes
+    - v-on: Yes
+
+
+}
+
+
+++++++++++++++++++++++++++++++++++
+"Thank you for taking the time to participate in this interview today. I appreciate your interest in the position. Following our conversation and evaluation of your skills, it appears there might be a gap between the requirements of this role and your current knowledge and experience level.  
+It would be best to conclude the interview at this point to ensure efficiency and respect both of our time. I encourage you to continue developing your skills and knowledge in [specific areas relevant to the role] which are essential for success in this field. Additionally, I recommend exploring resources such as [mention specific learning materials, courses, or platforms] to enhance your understanding further.  
+We appreciate your interest in our company and wish you the best in your career endeavors. We will be happy to see you among our applicants in the future." 

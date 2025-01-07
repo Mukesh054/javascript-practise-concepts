@@ -48,17 +48,16 @@ Array.prototype.customMap = function (callback) {
 };
 
 // Reduce
-Array.prototype.reduceAlbums = function (callback, initialValue) {
-  var accumulator = initialValue === undefined ? undefined : initialValue;
+Array.prototype.reduceAlbums = function (...args) {
+  let hasInitial = args.length > 1;
+  if (!hasInitial && this.length === 0) throw new Error();
 
-  for (var i = 0; i < this.length; i++) {
-    if (accumulator !== undefined) {
-      accumulator = callback.call(undefined, accumulator, this[i], i, this);
-    } else {
-      accumulator = this[i];
-    }
+  let result = hasInitial ? args[1] : this[0];
+  for (let i = hasInitial ? 0 : 1; i < this.length; i++) {
+    result = args[0](result, this[i], i, this);
   }
-  return accumulator;
+
+  return result;
 };
 
 // Filter
@@ -95,7 +94,7 @@ console.log(groupBy([6.1, 4.2, 6.3], Math.floor));
 console.log(groupBy(["one", "two", "three"], "length"));
 
 // Promise ALL
-Promise.myAll = function(promises) {
+Promise.myAll = function (promises) {
   const _promises = promises.map((item) =>
     item instanceof Promise ? item : Promise.resolve(item)
   );

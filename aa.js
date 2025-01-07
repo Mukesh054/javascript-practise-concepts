@@ -1,7 +1,3 @@
-
-// JS Questions.....
-// https://learnersbucket.com/examples/topics/interview/
-
 // Questions to prepare:
 // 1) Number of Islands
 // 2) LRU Cache
@@ -47,14 +43,14 @@
 
 
 /**
- * BFE Dev - 1hr Javascript Machine Coding round
- * System Design - 1 hr
- * Machine Coding Round - 1hr
+ * BFE Dev - 1 question
+ * System Design - 1 video
+ * CSS Kevin Powel - 1 video
  */
 
 
 
 // My actions items
-1) Immutability helper
-2) My own urlsearch params
-3) Create custom cookie
+1) 1 BFE DEV question => Implement Priority Queue (Q-24)
+1) sort an array of strings by their length without using the sort function
+1) Given an array divide that in such way that sum of right and left subarray is equal.   => Dynamic Programming

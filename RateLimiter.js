@@ -3,6 +3,7 @@ class RateLimiter {
     this.requests = {};
   }
 
+  // Deny a request if that CLIENT has made more than 100 requests in past 1 sec
   isAllow(clientId) {
     const timeInSeconds = Math.floor(Date.now() / 1000); // time in seconds
     const requestTime = timeInSeconds - 1; // Substract 1 second from time
