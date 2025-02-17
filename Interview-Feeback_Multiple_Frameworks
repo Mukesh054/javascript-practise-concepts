@@ -24,9 +24,9 @@ JavaScript {
 
 
     Object Oriented Programming {
-        He has good understanding of OOPS
+        He has poor understanding of OOPS
         interface: Yes
-        Abstract class: Yes
+        Abstract class: No
     }
 
     Cache: {
@@ -99,7 +99,7 @@ Web communication Protocols {
 }
 
 Software Quality {
-    - She has basic understanding of code quality tools.
+    - Candidate has basic understanding of code quality tools.
     - No good knowledge
 
     Eslint: Yes

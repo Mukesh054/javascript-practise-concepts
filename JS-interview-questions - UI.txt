@@ -3,6 +3,15 @@ Fieldglass {
   Welcome12@
 }
 
+VDI: Mak@1234_
+Epam laptop: Mak@12345_
+
+
+https://epam.udemy.com/course/rabbitmq-and-messaging-concepts/learn/lecture/15977210?src=sac&kw=rabbit#overview
+https://epam.udemy.com/course/serverless-framework/learn/lecture/19420504#overview
+
+Server=localhost\MSSQLSERVER03;Database=master;Trusted_Connection=True;
+
 // JUNIOR SOFTWARE ENGINEER
 {
   Q1: How many data types in javascript?
@@ -289,6 +298,7 @@ function sum(a) {
     }, [])
   }
 }
+function sum() {}
 sum([1,2,3])(3) // [4,5,6]
 
 +++++++++
@@ -328,7 +338,7 @@ findSecondLargestElem(arr);
 console.log(zeroSum([-4, -3, -2, -1, 0, 1, 2, 3, 10]));
 
 function toggleFunctionArguments() {}
-const aa = toggleFunctionArguments("Hello", "Ram", "Wink", 1);
+const aa = toggleFunctionArguments("Hello", "Ram", "Wink", 'Eva');
 console.log(aa());
 console.log(aa());
 console.log(aa());
@@ -429,7 +439,7 @@ console.log(rotatedArray([1, 2, 3, 4], 2));
 const doMemoize = () => {}
 
 function getResults(a, b) {
-  for() {}
+  for(let i=0; i<10000; i++) {}
   return a + b;
 }
 
@@ -441,12 +451,19 @@ console.log(memoizedData(3, 5));
 
 function countSum(arr, target) {}
 const aa = [2, 4, 5, 5, 12, 7, 13, 45];
-console.log(countSum(aa, 9));
+console.log(countSum(aa, 9)); // [4,5] => [2, 7]
 
 12) 
-const debounceMe = () => {}
+const debounceMe = (fn, delay) => {}
 
 
-School fee: 63300
 
-PRAN: 110197130101
+let person = {
+  name: 'Ram',
+  age: 20,
+  password: 'ABC'
+}
+
+for(let k in person) {
+  k === 'password'
+}
