@@ -1,3 +1,5 @@
+// 1
+// 2
 function Counter() {
   var counter = 0;
 
