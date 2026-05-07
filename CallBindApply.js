@@ -1,4 +1,4 @@
-// rmeoved comment
+// Expilcitly setting the value of this using call, apply and bind
 var Patient = {
   firstName: "Happy",
   lastName: "Sharma",
