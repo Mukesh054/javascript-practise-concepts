@@ -1,3 +1,4 @@
+// 1
 function Counter() {
   var counter = 0;
 
