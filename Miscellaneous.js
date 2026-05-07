@@ -230,6 +230,7 @@ function zeroSum(arr) {
   }
 }
 
+function zeroSum(arr) {}
 console.log(zeroSum([-4, -3, -2, -1, 0, 1, 2, 3, 10]));
 
 // COUNT NUMBER OF UNIQUE VALUES FROM AN ARRAY
