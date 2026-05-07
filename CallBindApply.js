@@ -1,4 +1,4 @@
-// Expilcitly setting the value of this using call, apply and bind
+// Call, Bind, Apply
 var Patient = {
   firstName: "Happy",
   lastName: "Sharma",
