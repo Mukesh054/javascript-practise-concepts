@@ -42,15 +42,13 @@
 16) 
 
 
-/**
- * BFE Dev - 1 question
- * System Design - 1 video
- * CSS Kevin Powel - 1 video
- */
+https://dometrain.com/
 
 
+Node JS concepts to explore:
+1) Error Handling
+2) Winston logger
+3) Redis caching
 
-// My actions items
-1) 1 BFE DEV question => Implement Priority Queue (Q-24)
-1) sort an array of strings by their length without using the sort function
-1) Given an array divide that in such way that sum of right and left subarray is equal.   => Dynamic Programming
+
+Praveen Daraboina <praveen.daraboina@orixindia.com>

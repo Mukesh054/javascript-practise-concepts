@@ -29,3 +29,26 @@ promise1.then(res => {
   console.log(res)
 })
 console.log('end');
+// start 1 end 2
+
+
+// ======================
+
+let a = 5;
+
+setTimeout(() => {
+  console.log("SetTimeout: ", a);
+  a = 10;
+}, 0);
+
+const p = new Promise((resolve, reject) => {
+  console.log("Promise: ", a);
+  a = 25;
+  resolve();
+});
+
+p.then(() => {
+  console.log("Promise_Then: ", a);
+});
+
+console.log("Final: ", a);

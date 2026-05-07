@@ -16,6 +16,12 @@ Square.prototype = Object.create(Rectangle.prototype);
 var sq = new Square(4);
 console.log(sq.area()); // 16
 
+
+function Rectangle() {
+  // area function
+}
+function Square() {}
+
 // Inheritance in case of Objects
 var Square = {
   x: 0,

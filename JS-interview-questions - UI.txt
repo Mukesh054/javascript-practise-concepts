@@ -1,10 +1,17 @@
 Fieldglass {
   mukeshsharma054
   Welcome12@
+  Welcome12_@
 }
 
-VDI: Mak@1234_
-Epam laptop: Mak@12345_
+EPAM udemy: {
+  email and Mak@123456_
+
+  https://epam.udemy.com/organization/home/
+}
+
+VDI: Ayan@12345678_
+Epam laptop: Evan@12345678_
 
 
 https://epam.udemy.com/course/rabbitmq-and-messaging-concepts/learn/lecture/15977210?src=sac&kw=rabbit#overview
@@ -97,7 +104,7 @@ Server=localhost\MSSQLSERVER03;Database=master;Trusted_Connection=True;
 
 // SENIOR SOFTWARE ENGINEER
 {
-    Senior Software Engineer should know all the basic stuff mentioned above. In addition to that he/she should be well versed in advance JS concepts like:
+  Senior Software Engineer should know all the basic stuff mentioned above. In addition to that he/she should be well versed in advance JS concepts like:
   1) Images - 
       - Compression
       - Lazy Loading
@@ -338,7 +345,7 @@ findSecondLargestElem(arr);
 console.log(zeroSum([-4, -3, -2, -1, 0, 1, 2, 3, 10]));
 
 function toggleFunctionArguments() {}
-const aa = toggleFunctionArguments("Hello", "Ram", "Wink", 'Eva');
+const aa = toggleFunctionArguments("A", "B", "C", 'D');
 console.log(aa());
 console.log(aa());
 console.log(aa());
@@ -362,7 +369,7 @@ console.log(y);
   execute(a, b)({ name: "Ram" });
 
 2)
-  function adding(arg) {}
+  function adding() {}
   let a = adding(1, 2)(2)(4, 3);
   console.log(a()); // 12
 
@@ -370,7 +377,7 @@ console.log(y);
   // Write a polyfill for Promise.any
   const race = function (promisesArray) {}
   const any = function (promisesArray) {}
-  const allSettled = function (promisesArray) {}
+  const allSettled = function () {}
 
 4) Sampler
 const sampler = (fn, count = 1) => {
@@ -402,15 +409,16 @@ sample("12");
 5) 
 const delayed = (data, delay) => {}
 
-const result = delayed({ foo: 'baz'}, 3000);
+const result = delayed('David', 3000);
 result.then(data => {
-  console.log(data); // prints {foo: 'baz'} after 3 seconds
+  console.log(data); // prints David after 3 seconds
 });
 
 
 6) 
 var productExceptSelf = function (nums) {}
 console.log(productExceptSelf([1, 2, 3, 4])); // [24, 12, 8, 6]
+
 
 
 7) 
@@ -436,6 +444,8 @@ function rotatedArray(arr, k) {}
 console.log(rotatedArray([1, 2, 3, 4], 2));
 
 11) 
+Function memoization
+
 const doMemoize = () => {}
 
 function getResults(a, b) {
@@ -454,16 +464,62 @@ const aa = [2, 4, 5, 5, 12, 7, 13, 45];
 console.log(countSum(aa, 9)); // [4,5] => [2, 7]
 
 12) 
-const debounceMe = (fn, delay) => {}
+const debounce = () => {}
+window.addEventListener(
+  "resize",
+  debounce(function () {
+    console.log("Make api calls here.....");
+    // Make API calls....
+  }, 3000)
+);
 
 
 
 let person = {
-  name: 'Ram',
+  name: 'David',
   age: 20,
   password: 'ABC'
 }
 
 for(let k in person) {
   k === 'password'
+}
+
+
+
+===========
+
+1) Zero sum problem 
+function zeroSum(arr) {}
+console.log(zeroSum([-4, -3, -2, -1, 0, 1, 2, 3, 10])); // [1, -1].....
+
+2) Currying basics 
+  function add() {}
+  console.log(add(5)(2)(4)(5)()) // 16
+
+3) SingleTon design pattern basics
+
+4) Async output 
+
+
+
+let obj = {
+  s1: 33,
+  s2: 44,....
+}
+
+test-id=ABC 
+
+
+Typescript:
+interface Students {
+  
+}
+
+const students: Students = {
+  Ram: 20,
+  Sapna: 30,
+  Gita: 40,
+  Raman: 60
+  ....
 }
